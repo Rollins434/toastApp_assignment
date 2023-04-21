@@ -1,0 +1,25 @@
+.special__container{
+    max-width: 360px;
+    padding:1rem 1rem;
+    background: #F0F3F3;
+}
+.special__banner{
+    background: url('../../assets/Mask.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 320px;
+    height: 122px;
+    border-radius: 25px;
+    position: relative;
+    p{
+position: absolute;
+bottom: 0px;
+font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+color: #FFFFFF;
+text-shadow: 4px -2px 2px rgba(204, 204, 204, 0.9);
+    }
+}

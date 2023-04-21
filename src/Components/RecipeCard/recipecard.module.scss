@@ -1,0 +1,123 @@
+.recipe__container {
+  max-width: 360px;
+  padding: 0px !important;
+  display: flex;
+  gap: 8px;
+}
+
+.recipe__wrapper {
+  height: 200px;
+  margin-top: 12px;
+  background: #f6f6f6;
+  box-shadow: inset -2px 2px 4px rgba(205, 205, 205, 0.2),
+    inset 2px -2px 4px rgba(205, 205, 205, 0.2),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.9),
+    inset 2px 2px 5px rgba(205, 205, 205, 0.9);
+  border-radius: 8px;
+
+  img {
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .recipe__name__wrapper {
+    margin-top: 8px;
+    align-items: baseline;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+.recipe__btn__wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 15px;
+
+  .add__btn {
+    background: #f0f0f3;
+    box-shadow: -5px 5px 10px rgba(221, 221, 224, 0.2),
+      5px -5px 10px rgba(221, 221, 224, 0.2),
+      -5px -5px 10px rgba(255, 255, 255, 0.9),
+      5px 5px 13px rgba(221, 221, 224, 0.9);
+    border-radius: 10px;
+    width: 72px;
+  }
+  button {
+    border: none;
+    font-family: Graphik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #4a5662;
+    display: flex;
+    gap: 8px;
+    text-transform: uppercase;
+  }
+}
+
+.name {
+  font-family: Graphik-bold;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+
+  display: flex;
+  align-items: center;
+  color: #4a5662;
+}
+.main__container {
+  .main__wrapper {
+    display: flex;
+    gap: 20px;
+
+    height: 87px;
+    left: 0px;
+    top: 0px;
+
+    background: #f5f5f5;
+    box-shadow: inset -2px 2px 4px rgba(220, 220, 220, 0.2),
+      inset 2px -2px 4px rgba(220, 220, 220, 0.2),
+      inset -2px -2px 4px rgba(255, 255, 255, 0.9),
+      inset 2px 2px 5px rgba(220, 220, 220, 0.9);
+    border-radius: 10px;
+  }
+  .left {
+    padding-top: 8px;
+    padding-left: 8px;
+    img {
+      border-radius: 10px;
+    }
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.cart__container{
+    width: 344px;
+    height: 232px;
+    background: #F1F1F1;
+    box-shadow: inset -3px -3px 7px #FFFFFF, inset 2px 2px 5px rgba(174, 174, 192, 0.4);
+    border-radius: 10px;
+}
+.cart__wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+padding:12px 0px;
+
+  .cart__name {
+    font-family: Graphik;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #4a5662;
+  }
+}

@@ -1,0 +1,38 @@
+.drop__container{
+    max-width: 360px;
+    padding: 0px;
+    position: relative;
+}
+// .main__acc{
+//    border-color: transparent !important;
+// }
+.horizontal{
+    width: 150px;
+    left: 8.2rem;
+    height: 0px;
+    position: absolute;
+    top: 10px;
+    opacity: 0.1;
+    border: 1px solid #4A5662;
+   z-index: 3;
+}
+.horizontal__main{
+    width: 175px;
+    left: 6.4rem;
+    height: 0px;
+    position: absolute;
+    top: 10px;
+    opacity: 0.1;
+    border: 1px solid #4A5662;
+   z-index: 3;
+}
+.horizontal__cart{
+    width: 175px;
+    left: 7.3rem;
+    height: 0px;
+    position: absolute;
+    top: 10px;
+    opacity: 0.1;
+    border: 1px solid #4A5662;
+   z-index: 3;
+}
