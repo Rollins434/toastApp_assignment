@@ -7,13 +7,20 @@ import veg from "../../assets/veglogo.png";
 import plus from "../../assets/plus.png"
 import minus from "../../assets/minus.png"
 import { useDispatch } from "react-redux";
-import { addToCart, getDistinct } from "../Slice/cartSlice";
+import { addToCart, decreaseItem, getDistinct,increaseItem } from "../Slice/cartSlice";
 const RecipeCard = ({ data, type }) => {
   const dispatch = useDispatch();
   const handleItem = (data) => {
     dispatch(addToCart(data));
     // dispatch(getDistinct(data))
   };
+  const handleIncrease = (data) =>{
+    dispatch(increaseItem(data))
+    // console.log(data)
+  }
+  const handleDecrease = (data) =>{
+    dispatch(decreaseItem(data))
+  }
 
   return (
     <>
@@ -109,17 +116,48 @@ const RecipeCard = ({ data, type }) => {
                   </div>
                   </div>
                   <div className={style.cartqty__section}>
-                    <button>
+                    <button onClick={() => handleDecrease(data?.id)} >
                       <img src={minus} alt="minus" height="32px" width="32px"/>
                     </button>
-                   <span>{data.quantity}</span>
-                    <button>
+                   <span> { data?.quantity < 0 ? 0: data.quantity}</span>
+                    <button onClick={() => handleIncrease(data?.id)}>
                       <img src={plus} alt="plus" height="32px" width="32px"/>
                     </button>
                   </div>
+                 
                 </div>
+               
               </React.Fragment>
             );
+          })}
+         {data.length > 0 &&<div className={style.addcooking}>Add cooking instruction</div>}
+        </Container>
+      )}
+       {type === "previous" && (
+        <Container className={style.cart__container}>
+          {data?.map((data) => {
+            return (
+              <React.Fragment key={data?.id}>
+                <div className={style.cart__wrapper}>
+                  <div style={{display:"flex",alignItems:"center",gap:"10px"}}>
+
+                  <img src={veg} alt="veglogo" width="16px" height="16px" />
+                  <div >
+                    <div className={style.cart__name}>{data?.name}</div>
+                    <div className={style.recipe__price}>{data?.price}</div>
+                  </div>
+                  </div>
+                  <div className={style.cartqty__section}>
+                   
+                   <span>{data.quantity}</span>
+                  
+                  </div>
+                </div>
+              
+              </React.Fragment>
+              
+            );
+         
           })}
           {/*        
         <div className={style.cart__wrapper}>
@@ -129,6 +167,7 @@ const RecipeCard = ({ data, type }) => {
           <div className={style.recipe__price}>data.price</div>
           </div>
         </div> */}
+           {data.length > 0 &&<div className={style.addcooking}>Add cooking instruction</div>}
         </Container>
       )}
     </>

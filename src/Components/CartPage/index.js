@@ -9,10 +9,11 @@ import { getCartTotal } from '../Slice/cartSlice'
 import Footer from '../Footer'
 
 const CartPage = () => {
-    const {cart,totalItems,totalPrice} = useSelector((state) => state.CART)
+    const {cart,totalItems,totalPrice,previousOrder} = useSelector((state) => state.CART)
     
     
     const recipeData = cart
+
     const dispatch = useDispatch()
     useEffect(()=>{
 dispatch(getCartTotal())
@@ -20,7 +21,8 @@ dispatch(getCartTotal())
   return (
    <Container className={style.cartpage__container}>
         <Header variant="cart"/>
-        <DropComponent name="Current order" type="cart" recipeData={recipeData}/>
+        <DropComponent name="Current Order" type="cart" recipeData={recipeData} />
+        <DropComponent name="Previous Orders" type="previous"  recipeData={previousOrder}/>
         <Footer variant="cart"/>
    </Container>
   )

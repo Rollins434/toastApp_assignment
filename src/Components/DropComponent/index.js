@@ -18,11 +18,13 @@ const DropComponent = (props) => {
                 ? style.horizontal
                 : props.type === "main"
                 ? style.horizontal__main
-                : props.type === "cart" ? style.horizontal__cart :''
+                : props.type === "cart" ? style.horizontal__cart : style.horizontal__previous
             }
           />
           <Accordion.Body>
-            <RecipeCard data={props.recipeData} type={props.type} />
+            <RecipeCard data={props.recipeData} type={props.type}  />
+
+            
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>

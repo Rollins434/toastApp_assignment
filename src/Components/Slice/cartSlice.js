@@ -6,6 +6,8 @@ const initialState = {
   totalItems: 0,
   totalPrice: 0,
   uniqueItem: 0,
+  previousOrder :[],
+  previousQty:0
 };
 
 export const cartSlice = createSlice({
@@ -41,13 +43,41 @@ export const cartSlice = createSlice({
       );
       state.totalPrice = parseInt(totalPrice.toFixed(2));
       state.totalItems = totalItems;
+     
     },
     getDistinct: (state, action) => {
         // state.cart.forEach((data) =>{
         //     if()
         // })
     },
+    increaseItem : (state,action) =>{
+        state.cart = state.cart.map((data) =>{
+            if(data.id === action.payload){
+                return {...data, quantity : data.quantity + 1}
+            }
+            return data
+        })
+    },
+    decreaseItem : (state,action) =>{
+        state.cart = state.cart.map((data) =>{
+            if(data.id === action.payload){
+                return {...data, quantity : data.quantity - 1}
+            }
+            return data
+        })
+    },
+    getPreviousOrder : (state) =>{
+   
+      
+        state.cart.forEach((data) => {
+        state.previousOrder.push(data)
+     
+       })
+       state.previousQty = state.totalItems;
+       state.cart = []
+       state.uniqueItem = 0
+    }
   },
 });
-export const { addToCart, getCartTotal, getDistinct } = cartSlice.actions;
+export const { addToCart, getCartTotal, getDistinct,increaseItem,decreaseItem,getPreviousOrder } = cartSlice.actions;
 export default cartSlice.reducer;
