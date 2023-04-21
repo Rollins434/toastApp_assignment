@@ -29,6 +29,7 @@ export const FoodItems = [
     image: chocolateimg,
     veglogo: veglogo,
     category: "special",
+    quantity:1,
   },
   {
     id: 2,
@@ -37,6 +38,7 @@ export const FoodItems = [
     image: sunsetacai,
     veglogo: veglogo,
     category: "special",
+    quantity:1,
   },
   {
     id: 3,
@@ -44,7 +46,8 @@ export const FoodItems = [
     price: "₹299",
     image: chocolateimg,
     veglogo: veglogo,
-    category:"main"
+    category:"main",
+    quantity:1,
   },
   {
     id:4,
@@ -52,7 +55,8 @@ export const FoodItems = [
     price: "₹299",
     image: sunsetacai,
     veglogo: veglogo,
-    category:"main"
+    category:"main",
+    quantity:1,
   },
 ];
 
